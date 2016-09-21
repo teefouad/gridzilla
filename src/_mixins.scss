@@ -1,0 +1,93 @@
+// ==========================================================================
+// MIXINS
+// ==========================================================================
+
+// Prints a media query based on given values for minimum and maximum widths.
+@mixin gz-media($min-value, $max-value) {
+  // No lower limit.
+  @if $min-value == null and $max-value != null {
+    @media screen and (max-width: $max-value - 1) { @content; }
+  }
+  // No upper limit.
+  @else if $min-value != null and $max-value == null {
+    @media screen and (min-width: $min-value) { @content; }
+  }
+  // Lower and upper limits are provided.
+  @else if $min-value != null and $max-value != null {
+    @media screen and (min-width: $min-value) and (max-width: $max-value - 1) { @content; }
+  }
+  // Lower and upper limits are not provided, there is no need to print a media query.
+  @else {
+    @content;
+  }
+}
+
+// Prints the provided styles specifically and only for the given breakpoint.
+@mixin gz-media-only($breakpoint) {
+  $min-value: map-get($gz-breakpoints, $breakpoint);
+  $max-value: gz-breakpoint-upper-limit($breakpoint);
+
+  @include gz-media($min-value, $max-value) {
+    @content;
+  }
+}
+
+// Prints the provided styles for the given breakpoint and larger breakpoints.
+@mixin gz-media-and-larger($breakpoint) {
+  $min-value: map-get($gz-breakpoints, $breakpoint);
+
+  @include gz-media($min-value, null) {
+    @content;
+  }
+}
+
+// Prints the provided styles for the given breakpoint and smaller breakpoints.
+@mixin gz-media-and-smaller($breakpoint) {
+  $max-value: gz-breakpoint-upper-limit($breakpoint);
+
+  @include gz-media(null, $max-value) {
+    @content;
+  }
+}
+
+// Prints the provided styles through the given breakpoints.
+@mixin gz-media-through($breakpoint-a, $breakpoint-b) {
+  $min-value: map-get($gz-breakpoints, $breakpoint-a);
+  $max-value: gz-breakpoint-upper-limit($breakpoint-b);
+
+  @include gz-media($min-value, $max-value) {
+    @content;
+  }
+}
+
+// Iterates over the breakpoints stack ($gz-breakpoints) and sets 3 global variables
+// which may be used when writing responsive styles.
+@mixin gz-make-responsive($enabled: true) {
+  // $enable is a parameter that could be used to manually override the global flag.
+  // For each breakpoint, set 3 global variables before printing the to-be-responsive styles.
+  @if $gz-responsive-features-enabled == true and $enabled == true {
+    @each $breakpoint-name, $breakpoint-value in $gz-breakpoints {
+      $gz-breakpoint: #{$breakpoint-name} !global;
+      $gz-breakpoint-prefix: "#{$breakpoint-name}-" !global;
+      $gz-breakpoint-suffix: "-#{$breakpoint-name}" !global;
+
+      // responsive styles should follow the mobile-first approach
+      @include gz-media-and-larger($breakpoint-name) {
+        @content;
+      }
+    }
+  }
+  // Skip if either the global flag or the manual flag is set to 'false'.
+  @else {
+    $gz-breakpoint: "" !global;
+    $gz-breakpoint-suffix: "" !global;
+    $gz-breakpoint-prefix: "" !global;
+
+    @content;
+  }
+
+  // Clear global variables.
+  $gz-breakpoint: null !global;
+  $gz-breakpoint-prefix: null !global;
+  $gz-breakpoint-suffix: null !global;
+}

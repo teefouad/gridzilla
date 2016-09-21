@@ -1,0 +1,11 @@
+@include gz-make-responsive($gz-auto-units-responsive-enabled) {
+  @for $a from 1 through $gz-auto-units-count {
+    .#{$gz-prefix}grid[class*='#{$gz-prefix}auto#{$gz-breakpoint-suffix}-#{$a}'] > [class*="#{$gz-prefix}unit-"] {
+      // Fix value to 2 digits to reduce output file size
+      $value: gz-to-fixed(100% / $a, 2);
+
+      flex: 0 0 $value;
+      width: $value;
+    }
+  }
+}

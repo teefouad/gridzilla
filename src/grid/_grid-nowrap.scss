@@ -1,0 +1,7 @@
+@include gz-make-responsive($gz-nowrap-responsive-enabled) {
+  .#{$gz-prefix}grid {
+    &.#{$gz-prefix}nowrap#{$gz-breakpoint-suffix} {
+      flex-wrap: nowrap;
+    }
+  }
+}

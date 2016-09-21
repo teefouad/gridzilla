@@ -1,0 +1,162 @@
+// ==========================================================================
+// CONFIG
+// ==========================================================================
+
+// namespacing
+$gz-namespace                                       : "" !default;
+$gz-prefix                                          : if($gz-namespace and $gz-namespace != "", "#{$gz-namespace}-", "") !default;
+
+// global responsive features
+$gz-responsive-features-enabled                     : true !default;
+
+// breakpoints
+$gz-breakpoints                                     : (
+                                                      "xs": null, // no lower limit
+                                                      "sm": 544px,
+                                                      "md": 768px,
+                                                      "lg": 992px,
+                                                      "xl": 1200px
+                                                    ) !default;
+
+// container
+$gz-container-enabled                               : true !default;
+$gz-container-responsive-enabled                    : true !default;
+$gz-container-side-padding                          : 20px !default;
+$gz-container-sizes                                 : (
+                                                      "xs": 100%,
+                                                      "sm": 100%,
+                                                      "md": 750px,
+                                                      "lg": 960px,
+                                                      "xl": 1140px
+                                                    ) !default;
+
+// equal-width units
+$gz-equal-width-units-enabled                     : true !default;
+$gz-equal-width-units-responsive-enabled          : true !default;
+
+// auto units
+$gz-auto-units-enabled                            : true !default;
+$gz-auto-units-responsive-enabled                 : true !default;
+$gz-auto-units-count                              : 6 !default; // .col.auto-xs-2
+
+// twelve-based units
+$gz-twelve-based-units-enabled                    : true !default;
+$gz-twelve-based-units-responsive-enabled         : true !default;
+$gz-twelve-based-units-count                      : 12 !default;
+
+// custom-based units
+$gz-custom-based-units-enabled                    : true !default;
+$gz-custom-based-units-responsive-enabled         : true !default;
+$gz-custom-based-units-count                      : 6 !default;
+
+// unit push/pull/offset
+$gz-push-units-enabled                            : true !default;
+$gz-pull-units-enabled                            : true !default;
+$gz-offset-units-enabled                          : true !default;
+
+// unit order
+$gz-first-unit-enabled                            : true !default;
+$gz-first-unit-responsive-enabled                 : true !default;
+
+$gz-last-unit-enabled                             : true !default;
+$gz-last-unit-responsive-enabled                  : true !default;
+
+// direction
+$gz-reverse-enabled                                 : true !default;
+$gz-reverse-responsive-enabled                      : true !default;
+
+$gz-vertical-enabled                                : true !default;
+$gz-vertical-responsive-enabled                     : true !default;
+
+// nowrap
+$gz-nowrap-enabled                                  : true !default;
+$gz-nowrap-responsive-enabled                       : true !default;
+
+// units distribution
+$gz-justify-enabled                                 : true !default;
+$gz-justify-responsive-enabled                      : true !default;
+
+$gz-spread-enabled                                  : true !default;
+$gz-spread-responsive-enabled                       : true !default;
+
+// horizontal alignment
+$gz-align-start-enabled                             : true !default;
+$gz-align-start-responsive-enabled                  : true !default;
+
+$gz-align-center-enabled                            : true !default;
+$gz-align-center-responsive-enabled                 : true !default;
+
+$gz-align-end-enabled                               : true !default;
+$gz-align-end-responsive-enabled                    : true !default;
+
+// vertical alignment
+$gz-align-top-enabled                               : true !default;
+$gz-align-top-responsive-enabled                    : true !default;
+
+$gz-align-middle-enabled                            : true !default;
+$gz-align-middle-responsive-enabled                 : true !default;
+
+$gz-align-bottom-enabled                            : true !default;
+$gz-align-bottom-responsive-enabled                 : true !default;
+
+$gz-align-top-unit-enabled                        : true !default;
+$gz-align-top-unit-responsive-enabled             : true !default;
+
+$gz-align-middle-unit-enabled                     : true !default;
+$gz-align-middle-unit-responsive-enabled          : true !default;
+
+$gz-align-bottom-unit-enabled                     : true !default;
+$gz-align-bottom-unit-responsive-enabled          : true !default;
+
+// fit-content
+$gz-fit-content-enabled                             : true !default;
+$gz-fit-content-responsive-enabled                  : true !default;
+
+// stretch
+$gz-stretch-enabled                                 : true !default;
+$gz-stretch-responsive-enabled                      : true !default;
+
+$gz-stretch-unit-enabled                          : true !default;
+$gz-stretch-unit-responsive-enabled               : true !default;
+
+// gaps
+$gz-default-gaps-enabled                            : true !default;
+$gz-default-gaps-responsive-enabled                 : true !default;
+$gz-default-gaps-values                             : (
+                                                      "xs": 4px,
+                                                      "sm": 10px,
+                                                      "md": 20px,
+                                                      "lg": 30px,
+                                                      "xl": 30px
+                                                    ) !default;
+
+$gz-no-gaps-enabled                                 : true !default;
+$gz-no-gaps-responsive-enabled                      : true !default;
+
+$gz-smallest-gaps-enabled                           : true !default;
+$gz-smallest-gaps-responsive-enabled                : true !default;
+$gz-smallest-gaps-value                             : 4px !default;
+
+$gz-smaller-gaps-enabled                            : true !default;
+$gz-smaller-gaps-responsive-enabled                 : true !default;
+$gz-smaller-gaps-value                              : 10px !default;
+
+$gz-small-gaps-enabled                              : true !default;
+$gz-small-gaps-responsive-enabled                   : true !default;
+$gz-small-gaps-value                                : 20px !default;
+
+$gz-medium-gaps-enabled                             : true !default;
+$gz-medium-gaps-responsive-enabled                  : true !default;
+$gz-medium-gaps-value                               : 30px !default;
+
+$gz-large-gaps-enabled                              : true !default;
+$gz-large-gaps-responsive-enabled                   : true !default;
+$gz-large-gaps-value                                : 50px !default;
+
+$gz-larger-gaps-enabled                             : true !default;
+$gz-larger-gaps-responsive-enabled                  : true !default;
+$gz-larger-gaps-value                               : 80px !default;
+
+$gz-largest-gaps-enabled                            : true !default;
+$gz-largest-gaps-responsive-enabled                 : true !default;
+$gz-largest-gaps-value                              : 120px !default;

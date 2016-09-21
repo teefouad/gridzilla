@@ -1,0 +1,29 @@
+@if $gz-align-start-enabled == true {
+  @include gz-make-responsive($gz-align-start-responsive-enabled) {
+    .#{$gz-prefix}grid {
+      &.#{$gz-prefix}align-start#{$gz-breakpoint-suffix} {
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+
+@if $gz-align-center-enabled == true {
+  @include gz-make-responsive($gz-align-center-responsive-enabled) {
+    .#{$gz-prefix}grid {
+      &.#{$gz-prefix}align-center#{$gz-breakpoint-suffix} {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@if $gz-align-end-enabled == true {
+  @include gz-make-responsive($gz-align-end-responsive-enabled) {
+    .#{$gz-prefix}grid {
+      &.#{$gz-prefix}align-end#{$gz-breakpoint-suffix} {
+        justify-content: flex-end;
+      }
+    }
+  }
+}

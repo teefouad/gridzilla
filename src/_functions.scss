@@ -1,0 +1,91 @@
+// ==========================================================================
+// FUNCTIONS
+// ==========================================================================
+
+// Returns power of any number.
+@function gz-pow($number, $exponent) {
+  $ret: 1;
+
+  @if $exponent >= 0 {
+    @for $i from 1 through $exponent {
+      $ret: $ret * $number;
+    }
+  } @else {
+    @for $i from $exponent to 0 {
+      $ret: $ret / $number;
+    }
+  }
+
+  @return $ret;
+}
+
+// Fixes a number to N digits.
+@function gz-to-fixed($float, $digits: 2) {
+  $pow: gz-pow(10, $digits);
+  @return round($float * $pow) / $pow;
+}
+
+// Splits a string into a list based on a specific delimiter.
+@function gz-explode($string, $delimiter) {
+  @if $string == "" {
+    @return ("");
+  }
+
+  $list: ();
+  $length: str-length($string);
+  $should-loop: true;
+
+  @while $should-loop {
+    $index: str-index($string, $delimiter);
+
+    // No delimiter in the string
+    @if str-length($string) >= 1 and $index == null {
+      $list: append($list, $string);
+      $string: "";
+      $should-loop: false;
+    }
+
+    // Delimiter found
+    @if type-of($index) == number {
+      $part: str-slice($string, 0, $index - 1);
+      $list: append($list, $part);
+      $string: str-slice($string, $index + 1, $length);
+    }
+  }
+
+  @return $list;
+}
+
+// Returns index of a given key in a map.
+@function gz-key-index($map, $element) {
+  $keys-list: map-keys($map);
+  @return index($keys-list, $element);
+}
+
+// Returns a key for a given index in a map.
+@function gz-key-at($map, $index) {
+  $keys-list: map-keys($map);
+  @return nth($keys-list, $index);
+}
+
+// Checks whether the passed breakpoint is the first breakpoint in the stack ($gz-breakpoints) or not.
+@function gz-is-first-breakpoint($breakpoint) {
+  @return gz-key-at($gz-breakpoints, 1) == $breakpoint;
+}
+
+// Checks whether the passed breakpoint is the last breakpoint in the stack ($gz-breakpoints) or not.
+@function gz-is-last-breakpoint($breakpoint) {
+  @return gz-key-at($gz-breakpoints, length($gz-breakpoints)) == $breakpoint;
+}
+
+// Returns the upper-limit for a given breakpoint.
+@function gz-breakpoint-upper-limit($breakpoint) {
+  @if (gz-is-last-breakpoint($breakpoint) == true) {
+    @return null;
+  }
+
+  $breakpoint-index: gz-key-index($gz-breakpoints, $breakpoint);
+  $next-breakpoint: gz-key-at($gz-breakpoints, $breakpoint-index + 1);
+
+  @return map-get($gz-breakpoints, $next-breakpoint);
+}

@@ -1,0 +1,19 @@
+@if $gz-justify-enabled == true {
+  @include gz-make-responsive($gz-justify-responsive-enabled) {
+    .#{$gz-prefix}grid {
+      &.#{$gz-prefix}justify#{$gz-breakpoint-suffix} {
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+@if $gz-spread-enabled == true {
+  @include gz-make-responsive($gz-spread-responsive-enabled) {
+    .#{$gz-prefix}grid {
+      &.#{$gz-prefix}spread#{$gz-breakpoint-suffix} {
+        justify-content: space-around;
+      }
+    }
+  }
+}

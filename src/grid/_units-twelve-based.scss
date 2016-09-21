@@ -1,0 +1,39 @@
+@include gz-make-responsive($gz-twelve-based-units-responsive-enabled) {
+  @for $a from 1 through $gz-twelve-based-units-count {
+    // Fix value to 2 digits to reduce output file size
+    $value: gz-to-fixed(100% * $a / $gz-twelve-based-units-count, 2);
+
+    // Width
+    .#{$gz-prefix}unit#{$gz-breakpoint-suffix}-#{$a} { flex: 0 0 $value; width: $value; }
+
+    // Push
+    @if $gz-push-units-enabled == true {
+      .#{$gz-prefix}push#{$gz-breakpoint-suffix}-#{$a} { left: $value; }
+    }
+
+    // Pull
+    @if $gz-pull-units-enabled == true {
+      .#{$gz-prefix}pull#{$gz-breakpoint-suffix}-#{$a} { left: -$value; }
+    }
+
+    // Offset
+    @if $gz-offset-units-enabled == true {
+      .#{$gz-prefix}offset#{$gz-breakpoint-suffix}-#{$a} { margin-left: $value; }
+    }
+  }
+
+  // Reset push
+  @if $gz-push-units-enabled == true {
+    .#{$gz-prefix}push#{$gz-breakpoint-suffix}-0 { left: 0; }
+  }
+
+  // Reset pull
+  @if $gz-pull-units-enabled == true {
+    .#{$gz-prefix}pull#{$gz-breakpoint-suffix}-0 { left: 0; }
+  }
+
+  // Reset offset
+  @if $gz-offset-units-enabled == true {
+    .#{$gz-prefix}offset#{$gz-breakpoint-suffix}-0 { margin-left: 0; }
+  }
+}

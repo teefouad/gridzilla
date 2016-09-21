@@ -1,0 +1,8 @@
+@include gz-make-responsive($gz-fit-content-responsive-enabled) {
+  [class*="#{$gz-prefix}unit-"] {
+    &.#{$gz-prefix}fit-content#{$gz-breakpoint-suffix} {
+      flex: none;
+      width: auto;
+    }
+  }
+}

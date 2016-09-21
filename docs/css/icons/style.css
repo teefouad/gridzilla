@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'gridzilla';
+  src:  url('fonts/gridzilla.eot?xeryfl');
+  src:  url('fonts/gridzilla.eot?xeryfl#iefix') format('embedded-opentype'),
+    url('fonts/gridzilla.ttf?xeryfl') format('truetype'),
+    url('fonts/gridzilla.woff?xeryfl') format('woff'),
+    url('fonts/gridzilla.svg?xeryfl#gridzilla') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'gridzilla' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-download:before {
+  content: "\f019";
+}
+.icon-twitter:before {
+  content: "\f099";
+}
+.icon-facebook:before {
+  content: "\f09a";
+}
+.icon-github:before {
+  content: "\f09b";
+}
+.icon-smile:before {
+  content: "\f118";
+}
+.icon-file:before {
+  content: "\f15b";
+}
+.icon-heart:before {
+  content: "\f004";
+}
+
