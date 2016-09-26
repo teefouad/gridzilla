@@ -30,6 +30,10 @@ $gz-container-sizes                                 : (
                                                       "xl": 1140px
                                                     ) !default;
 
+// tiles
+$gz-tiles-enabled                                 : true !default;
+$gz-tiles-responsive-enabled                      : true !default;
+
 // equal-width units
 $gz-equal-width-units-enabled                     : true !default;
 $gz-equal-width-units-responsive-enabled          : true !default;

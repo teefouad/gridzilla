@@ -1,7 +1,11 @@
-@include gz-make-responsive($gz-stretch-unit-responsive-enabled) {
-  [class*="#{$gz-prefix}unit-"] {
-    &.#{$gz-prefix}stretch#{$gz-breakpoint-suffix} {
-      align-self: stretch;
+@if $gz-stretch-unit-enabled == true {
+
+  @include gz-make-responsive($gz-stretch-unit-responsive-enabled) {
+    [class*="#{$gz-prefix}unit-"] {
+      &.#{$gz-prefix}stretch#{$gz-breakpoint-suffix} {
+        align-self: stretch;
+      }
     }
   }
+
 }

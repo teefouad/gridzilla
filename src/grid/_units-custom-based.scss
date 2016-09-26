@@ -1,48 +1,52 @@
-@include gz-make-responsive($gz-custom-based-units-responsive-enabled) {
-  // This list will be used to keep track of calculated columns to avoid redundancy
-  // in column class names (col-md-2-4 is the same as col-md-1-2).
-  $calculated-units: ();
+@if $gz-custom-based-units-enabled == true {
 
-  @for $b from 1 through $gz-custom-based-units-count {
-    @for $a from 1 through $b {
-      @if index($calculated-units, #{$a / $b}) == null {
-        // Fix value to 2 digits to reduce output file size
-        $value: gz-to-fixed(100% * $a / $b, 2);
-        $calculated-units: append($calculated-units, #{$a / $b});
+  @include gz-make-responsive($gz-custom-based-units-responsive-enabled) {
+    // This list will be used to keep track of calculated columns to avoid redundancy
+    // in column class names (col-md-2-4 is the same as col-md-1-2).
+    $calculated-units: ();
 
-        // Width
-        .#{$gz-prefix}unit#{$gz-breakpoint-suffix}-#{$a}-#{$b} { flex: 0 0 $value; width: $value; }
+    @for $b from 1 through $gz-custom-based-units-count {
+      @for $a from 1 through $b {
+        @if index($calculated-units, #{$a / $b}) == null {
+          // Fix value to 2 digits to reduce output file size
+          $value: gz-to-fixed(100% * $a / $b, 2);
+          $calculated-units: append($calculated-units, #{$a / $b});
 
-        // Push
-        @if $gz-push-units-enabled == true {
-          .#{$gz-prefix}push#{$gz-breakpoint-suffix}-#{$a}-#{$b} { left: $value; }
-        }
+          // Width
+          .#{$gz-prefix}unit#{$gz-breakpoint-suffix}-#{$a}-#{$b} { flex: 0 0 $value; width: $value; }
 
-        // Pull
-        @if $gz-pull-units-enabled == true {
-          .#{$gz-prefix}pull#{$gz-breakpoint-suffix}-#{$a}-#{$b} { left: -$value; }
-        }
+          // Push
+          @if $gz-push-units-enabled == true {
+            .#{$gz-prefix}push#{$gz-breakpoint-suffix}-#{$a}-#{$b} { left: $value; }
+          }
 
-        // Offset
-        @if $gz-offset-units-enabled == true {
-          .#{$gz-prefix}offset#{$gz-breakpoint-suffix}-#{$a}-#{$b} { margin-left: $value; }
+          // Pull
+          @if $gz-pull-units-enabled == true {
+            .#{$gz-prefix}pull#{$gz-breakpoint-suffix}-#{$a}-#{$b} { left: -$value; }
+          }
+
+          // Offset
+          @if $gz-offset-units-enabled == true {
+            .#{$gz-prefix}offset#{$gz-breakpoint-suffix}-#{$a}-#{$b} { margin-left: $value; }
+          }
         }
       }
     }
+
+    // Reset push
+    @if $gz-push-units-enabled == true {
+      .#{$gz-prefix}push#{$gz-breakpoint-suffix}-0 { left: 0; }
+    }
+
+    // Reset pull
+    @if $gz-pull-units-enabled == true {
+      .#{$gz-prefix}pull#{$gz-breakpoint-suffix}-0 { left: 0; }
+    }
+
+    // Reset offset
+    @if $gz-offset-units-enabled == true {
+      .#{$gz-prefix}offset#{$gz-breakpoint-suffix}-0 { margin-left: 0; }
+    }
   }
 
-  // Reset push
-  @if $gz-push-units-enabled == true {
-    .#{$gz-prefix}push#{$gz-breakpoint-suffix}-0 { left: 0; }
-  }
-
-  // Reset pull
-  @if $gz-pull-units-enabled == true {
-    .#{$gz-prefix}pull#{$gz-breakpoint-suffix}-0 { left: 0; }
-  }
-
-  // Reset offset
-  @if $gz-offset-units-enabled == true {
-    .#{$gz-prefix}offset#{$gz-breakpoint-suffix}-0 { margin-left: 0; }
-  }
 }

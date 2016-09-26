@@ -1,7 +1,11 @@
-@include gz-make-responsive($gz-stretch-responsive-enabled) {
-  .#{$gz-prefix}grid {
-    &.#{$gz-prefix}stretch#{$gz-breakpoint-suffix} {
-      align-items: stretch;
+@if $gz-stretch-enabled == true {
+
+  @include gz-make-responsive($gz-stretch-responsive-enabled) {
+    .#{$gz-prefix}grid {
+      &.#{$gz-prefix}stretch#{$gz-breakpoint-suffix} {
+        align-items: stretch;
+      }
     }
   }
+
 }
