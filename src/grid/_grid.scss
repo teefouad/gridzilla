@@ -1,10 +1,5 @@
+@import "grid-mixins";
+
 .#{$gz-prefix}grid {
-  // Enable flex mode.
-  display: flex;
-  // Flex items should wrap by default.
-  flex-wrap: wrap;
-  // Align flex items to the baseline by default.
-  align-items: baseline;
-  // border-box forces the browser to include padding and borders when calculating the width.
-  box-sizing: border-box;
+  @include gz-make-grid;
 }
