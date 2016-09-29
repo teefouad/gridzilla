@@ -1,0 +1,22 @@
+@mixin gz-make-gaps ($size) {
+  // Gaps will be created by padding on both sides of the unit
+  // (hence multiplication by 0.5) and negative margins on both sides of the parent.
+  $size: 0.5 * $size;
+
+  margin: -#{$size};
+
+  > * {
+    padding: #{$size};
+  }
+
+  // Create gaps between consecutive grids.
+  &:not(:last-child) {
+    margin-bottom: #{$size};
+  }
+}
+
+@mixin gz-make-gaps-modifier($modifier-class, $size) {
+  .#{$gz-prefix}#{$modifier-class} {
+    @include gz-make-gaps($size);
+  }
+}

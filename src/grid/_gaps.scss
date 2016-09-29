@@ -1,78 +1,59 @@
-@mixin gz-grid-gaps($name, $size) {
-  // If $name is not empty, then convert it to a modifier class.
-  @if $name != "" {
-    $name: ".#{$gz-prefix}#{$name}-gaps#{$gz-breakpoint-suffix}";
-  }
-
-  // Gaps will be created by padding on both sides of the column -hence multiplication
-  // by 0.5- and negative margins on both sides of the row.
-  $size: 0.5 * $size;
-
-  .#{$gz-prefix}grid#{$name} {
-    margin: -#{$size};
-
-    [class*="#{$gz-prefix}unit-"] {
-      padding: #{$size};
-    }
-
-    // Create gaps between consecutive rows.
-    &:not(:last-child) {
-      margin-bottom: #{$size};
-    }
-  }
-}
+@import "grid-gaps-mixins";
 
 @if $gz-default-gaps-enabled == true  {
   @include gz-make-responsive($gz-default-gaps-responsive-enabled) {
     $gz-default-gaps-value: map-get($gz-default-gaps-values, $gz-breakpoint);
-    @include gz-grid-gaps("", $gz-default-gaps-value);
-  }
-}
 
-@if $gz-no-gaps-enabled == true {
-  @include gz-make-responsive($gz-no-gaps-responsive-enabled) {
-    @include gz-grid-gaps("no", 0);
+    .#{$gz-prefix}grid {
+      @include gz-make-gaps($gz-default-gaps-value);
+    }
   }
 }
 
 @if $gz-smallest-gaps-enabled == true {
   @include gz-make-responsive($gz-smallest-gaps-responsive-enabled) {
-    @include gz-grid-gaps("smallest", $gz-smallest-gaps-value);
+    @include gz-make-gaps-modifier("smallest-gaps#{$gz-breakpoint-suffix}", $gz-smallest-gaps-value);
   }
 }
 
 @if $gz-smaller-gaps-enabled == true {
   @include gz-make-responsive($gz-smaller-gaps-responsive-enabled) {
-    @include gz-grid-gaps("smaller", $gz-smaller-gaps-value);
+    @include gz-make-gaps-modifier("smaller-gaps#{$gz-breakpoint-suffix}", $gz-smaller-gaps-value);
   }
 }
 
 @if $gz-small-gaps-enabled == true {
   @include gz-make-responsive($gz-small-gaps-responsive-enabled) {
-    @include gz-grid-gaps("small", $gz-small-gaps-value);
+    @include gz-make-gaps-modifier("small-gaps#{$gz-breakpoint-suffix}", $gz-small-gaps-value);
   }
 }
 
 @if $gz-medium-gaps-enabled == true {
   @include gz-make-responsive($gz-medium-gaps-responsive-enabled) {
-    @include gz-grid-gaps("medium", $gz-medium-gaps-value);
+    @include gz-make-gaps-modifier("medium-gaps#{$gz-breakpoint-suffix}", $gz-medium-gaps-value);
   }
 }
 
 @if $gz-large-gaps-enabled == true {
   @include gz-make-responsive($gz-large-gaps-responsive-enabled) {
-    @include gz-grid-gaps("large", $gz-large-gaps-value);
+    @include gz-make-gaps-modifier("large-gaps#{$gz-breakpoint-suffix}", $gz-large-gaps-value);
   }
 }
 
 @if $gz-larger-gaps-enabled == true {
   @include gz-make-responsive($gz-larger-gaps-responsive-enabled) {
-    @include gz-grid-gaps("larger", $gz-larger-gaps-value);
+    @include gz-make-gaps-modifier("larger-gaps#{$gz-breakpoint-suffix}", $gz-larger-gaps-value);
   }
 }
 
 @if $gz-largest-gaps-enabled == true {
   @include gz-make-responsive($gz-largest-gaps-responsive-enabled) {
-    @include gz-grid-gaps("largest", $gz-largest-gaps-value);
+    @include gz-make-gaps-modifier("largest-gaps#{$gz-breakpoint-suffix}", $gz-largest-gaps-value);
+  }
+}
+
+@if $gz-no-gaps-enabled == true {
+  @include gz-make-responsive($gz-no-gaps-responsive-enabled) {
+    @include gz-make-gaps-modifier("no-gaps#{$gz-breakpoint-suffix}", 0);
   }
 }
