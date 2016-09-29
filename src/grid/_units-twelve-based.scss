@@ -1,42 +1,41 @@
+@import "units-mixins";
+
 @if $gz-twelve-based-units-enabled == true {
 
   @include gz-make-responsive($gz-twelve-based-units-responsive-enabled) {
     @for $a from 1 through $gz-twelve-based-units-count {
-      // Fix value to 2 digits to reduce output file size
-      $value: gz-to-fixed(100% * $a / $gz-twelve-based-units-count, 2);
-
       // Width
-      .#{$gz-prefix}unit#{$gz-breakpoint-suffix}-#{$a} { flex: 0 0 $value; width: $value; }
+      .#{$gz-prefix}unit#{$gz-breakpoint-suffix}-#{$a} { @include gz-make-width($a, $gz-twelve-based-units-count); }
 
       // Push
       @if $gz-push-units-enabled == true {
-        .#{$gz-prefix}push#{$gz-breakpoint-suffix}-#{$a} { left: $value; }
+        .#{$gz-prefix}push#{$gz-breakpoint-suffix}-#{$a} { @include gz-make-push($a, $gz-twelve-based-units-count); }
       }
 
       // Pull
       @if $gz-pull-units-enabled == true {
-        .#{$gz-prefix}pull#{$gz-breakpoint-suffix}-#{$a} { left: -$value; }
+        .#{$gz-prefix}pull#{$gz-breakpoint-suffix}-#{$a} { @include gz-make-pull($a, $gz-twelve-based-units-count); }
       }
 
       // Offset
       @if $gz-offset-units-enabled == true {
-        .#{$gz-prefix}offset#{$gz-breakpoint-suffix}-#{$a} { margin-left: $value; }
+        .#{$gz-prefix}offset#{$gz-breakpoint-suffix}-#{$a} { @include gz-make-offset($a, $gz-twelve-based-units-count); }
       }
     }
 
     // Reset push
     @if $gz-push-units-enabled == true {
-      .#{$gz-prefix}push#{$gz-breakpoint-suffix}-0 { left: 0; }
+      .#{$gz-prefix}push#{$gz-breakpoint-suffix}-0 { @include gz-make-push(0, 0); }
     }
 
     // Reset pull
     @if $gz-pull-units-enabled == true {
-      .#{$gz-prefix}pull#{$gz-breakpoint-suffix}-0 { left: 0; }
+      .#{$gz-prefix}pull#{$gz-breakpoint-suffix}-0 { @include gz-make-pull(0, 0); }
     }
 
     // Reset offset
     @if $gz-offset-units-enabled == true {
-      .#{$gz-prefix}offset#{$gz-breakpoint-suffix}-0 { margin-left: 0; }
+      .#{$gz-prefix}offset#{$gz-breakpoint-suffix}-0 { @include gz-make-offset(0, 0); }
     }
   }
 

@@ -1,3 +1,5 @@
+@import "units-mixins";
+
 @if $gz-custom-based-units-enabled == true {
 
   @include gz-make-responsive($gz-custom-based-units-responsive-enabled) {
@@ -8,26 +10,24 @@
     @for $b from 1 through $gz-custom-based-units-count {
       @for $a from 1 through $b {
         @if index($calculated-units, #{$a / $b}) == null {
-          // Fix value to 2 digits to reduce output file size
-          $value: gz-to-fixed(100% * $a / $b, 2);
           $calculated-units: append($calculated-units, #{$a / $b});
 
           // Width
-          .#{$gz-prefix}unit#{$gz-breakpoint-suffix}-#{$a}-#{$b} { flex: 0 0 $value; width: $value; }
+          .#{$gz-prefix}unit#{$gz-breakpoint-suffix}-#{$a}-#{$b} { @include gz-make-width($a, $b); }
 
           // Push
           @if $gz-push-units-enabled == true {
-            .#{$gz-prefix}push#{$gz-breakpoint-suffix}-#{$a}-#{$b} { left: $value; }
+            .#{$gz-prefix}push#{$gz-breakpoint-suffix}-#{$a}-#{$b} { @include gz-make-push($a, $b); }
           }
 
           // Pull
           @if $gz-pull-units-enabled == true {
-            .#{$gz-prefix}pull#{$gz-breakpoint-suffix}-#{$a}-#{$b} { left: -$value; }
+            .#{$gz-prefix}pull#{$gz-breakpoint-suffix}-#{$a}-#{$b} { @include gz-make-pull($a, $b); }
           }
 
           // Offset
           @if $gz-offset-units-enabled == true {
-            .#{$gz-prefix}offset#{$gz-breakpoint-suffix}-#{$a}-#{$b} { margin-left: $value; }
+            .#{$gz-prefix}offset#{$gz-breakpoint-suffix}-#{$a}-#{$b} { @include gz-make-offset($a, $b); }
           }
         }
       }
@@ -35,17 +35,17 @@
 
     // Reset push
     @if $gz-push-units-enabled == true {
-      .#{$gz-prefix}push#{$gz-breakpoint-suffix}-0 { left: 0; }
+      .#{$gz-prefix}push#{$gz-breakpoint-suffix}-0 { @include gz-make-push(0, 0); }
     }
 
     // Reset pull
     @if $gz-pull-units-enabled == true {
-      .#{$gz-prefix}pull#{$gz-breakpoint-suffix}-0 { left: 0; }
+      .#{$gz-prefix}pull#{$gz-breakpoint-suffix}-0 { @include gz-make-pull(0, 0); }
     }
 
     // Reset offset
     @if $gz-offset-units-enabled == true {
-      .#{$gz-prefix}offset#{$gz-breakpoint-suffix}-0 { margin-left: 0; }
+      .#{$gz-prefix}offset#{$gz-breakpoint-suffix}-0 { @include gz-make-offset(0, 0); }
     }
   }
 

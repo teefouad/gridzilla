@@ -1,0 +1,27 @@
+@function gz-get-span-value($count, $total) {
+  @if $count == 0 { @return 0; }
+
+  // Fix value to 2 digits to reduce output file size
+  @return gz-to-fixed(100% * $count / $total, 2);
+}
+
+@mixin gz-make-width ($count, $total) {
+  $value: gz-get-span-value($count, $total);
+  flex: 0 0 $value;
+  width: $value;
+}
+
+@mixin gz-make-push ($count, $total) {
+  $value: gz-get-span-value($count, $total);
+  left: $value;
+}
+
+@mixin gz-make-pull ($count, $total) {
+  $value: gz-get-span-value($count, $total);
+  left: -$value;
+}
+
+@mixin gz-make-offset ($count, $total) {
+  $value: gz-get-span-value($count, $total);
+  margin-left: $value;
+}
