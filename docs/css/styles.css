@@ -1794,6 +1794,11 @@ body.emotion:before {
 #page .table-responsive {
   max-width: 100%;
   overflow: auto;
+  margin: 30px 0;
+}
+
+#page .table-responsive table {
+  margin: 0;
 }
 
 @media screen and (max-width: 991px) {
@@ -1875,87 +1880,6 @@ body.emotion:before {
   background: #f9f9f9;
 }
 
-#page .demo [class*="container-"] {
-  position: relative;
-  padding-top: 25px;
-}
-
-#page .demo [class*="container-"] > p {
-  position: absolute;
-  top: -5px;
-  right: -19px;
-  left: -19px;
-}
-
-#page .grid.grid-display {
-  position: relative;
-  padding-top: 25px;
-  margin: 0 -20px;
-  border: 1px dashed #ff3399;
-  border-radius: 4px;
-}
-
-#page .grid.grid-display > p {
-  position: absolute;
-  top: 10px;
-  right: 1px;
-  left: 1px;
-}
-
-#page .spanner {
-  display: flex;
-}
-
-#page .spanner .span-right,
-#page .spanner .span-left {
-  position: relative;
-  flex: 1 1 100%;
-}
-
-#page .spanner .span-right:before,
-#page .spanner .span-left:before {
-  content: "";
-  display: block;
-  height: 0;
-  position: absolute;
-  top: 50%;
-  left: 5px;
-  right: 4px;
-  border-top: 1px solid rgba(255, 51, 153, 0.75);
-}
-
-#page .spanner .span-right:after,
-#page .spanner .span-left:after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  border: 4px solid transparent;
-  position: absolute;
-  top: 50%;
-  right: 4px;
-  transform: translate3d(8px, -3.5px, 0);
-  border-left-color: rgba(255, 51, 153, 0.75);
-}
-
-#page .spanner .span-left {
-  flex: 0 0 20px;
-  width: 20px;
-}
-
-#page .spanner .span-left:before {
-  left: 4px;
-  right: 5px;
-}
-
-#page .spanner .span-left:after {
-  right: auto;
-  left: 4px;
-  transform: translate3d(-8px, -3.5px, 0);
-  border-right-color: rgba(255, 51, 153, 0.75);
-  border-left-color: transparent;
-}
-
 #page .color {
   color: #ff3359;
 }
@@ -1981,6 +1905,91 @@ body.emotion:before {
     padding-right: 20px;
     padding-left: 20px;
   }
+}
+
+.container-display {
+  margin: 30px 0;
+  padding: 20px;
+  padding-top: 45px;
+  font-size: 12px;
+  background: #f6f6f6;
+  border-radius: 5px;
+}
+
+.container-display > .spanner {
+  position: absolute;
+  top: 15px;
+  right: 0;
+  left: 0;
+}
+
+.grid.grid-display {
+  position: relative;
+  padding-top: 25px;
+  margin: 0;
+  border: 1px dashed #ff3399;
+  border-radius: 4px;
+}
+
+.grid.grid-display > .spanner {
+  position: absolute;
+  top: 10px;
+  right: 1px;
+  left: 1px;
+}
+
+.spanner {
+  display: flex;
+}
+
+.spanner .span-right,
+.spanner .span-left {
+  position: relative;
+  flex: 1 1 100%;
+}
+
+.spanner .span-right:before,
+.spanner .span-left:before {
+  content: "";
+  display: block;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  right: 4px;
+  border-top: 1px solid rgba(255, 51, 153, 0.75);
+}
+
+.spanner .span-right:after,
+.spanner .span-left:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: 4px solid transparent;
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  transform: translate3d(8px, -3.5px, 0);
+  border-left-color: rgba(255, 51, 153, 0.75);
+}
+
+.spanner .span-left {
+  flex: 0 0 20px;
+  width: 20px;
+}
+
+.spanner .span-left:before {
+  left: 4px;
+  right: 5px;
+}
+
+.spanner .span-left:after {
+  right: auto;
+  left: 4px;
+  transform: translate3d(-8px, -3.5px, 0);
+  border-right-color: rgba(255, 51, 153, 0.75);
+  border-left-color: transparent;
 }
 
 .box {

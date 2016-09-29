@@ -2,6 +2,16 @@
 // MIXINS
 // ==========================================================================
 
+// Clear floated elements.
+@mixin gz-clear-floats {
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
 // Prints a media query based on given values for minimum and maximum widths.
 @mixin gz-media($min-value, $max-value) {
   // No lower limit.
