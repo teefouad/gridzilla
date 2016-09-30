@@ -2,7 +2,7 @@
   @include gz-make-responsive($gz-align-top-unit-responsive-enabled) {
     [class*="#{$gz-prefix}unit-"] {
       &.#{$gz-prefix}align-top#{$gz-breakpoint-suffix} {
-        align-self: flex-start;
+        @include gz-align-unit(top);
       }
     }
   }
@@ -12,7 +12,7 @@
   @include gz-make-responsive($gz-align-middle-unit-responsive-enabled) {
     [class*="#{$gz-prefix}unit-"] {
       &.#{$gz-prefix}align-middle#{$gz-breakpoint-suffix} {
-        align-self: center;
+        @include gz-align-unit(middle);
       }
     }
   }
@@ -22,7 +22,7 @@
   @include gz-make-responsive($gz-align-bottom-unit-responsive-enabled) {
     [class*="#{$gz-prefix}unit-"] {
       &.#{$gz-prefix}align-bottom#{$gz-breakpoint-suffix} {
-        align-self: flex-end;
+        @include gz-align-unit(bottom);
       }
     }
   }

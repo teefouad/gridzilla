@@ -1,8 +1,10 @@
+@import "units-mixins";
+
 @if $gz-first-unit-enabled == true {
   @include gz-make-responsive($gz-first-unit-responsive-enabled) {
     [class*="#{$gz-prefix}unit-"] {
       &.#{$gz-prefix}first#{$gz-breakpoint-suffix} {
-        order: -1;
+        @include gz-make-first;
       }
     }
   }
@@ -12,7 +14,7 @@
   @include gz-make-responsive($gz-last-unit-responsive-enabled) {
     [class*="#{$gz-prefix}unit-"] {
       &.#{$gz-prefix}last#{$gz-breakpoint-suffix} {
-        order: 9999;
+        @include gz-make-last;
       }
     }
   }
