@@ -32,7 +32,7 @@
   // Required for offset/push/pull
   position: relative;
   // By default, all columns should be 100% wide (mobile-first).
-  @include gz-make-width(100%);
+  @include gz-make-width($width);
   // border-box forces the browser to include padding and borders when calculating the width.
   box-sizing: border-box;
 }
