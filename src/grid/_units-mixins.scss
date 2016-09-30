@@ -7,6 +7,11 @@
   @return gz-to-fixed(100% * $count / $total, 2);
 }
 
+@mixin gz-make-equal-width {
+  flex: 1 1 0%;
+  width: auto;
+}
+
 @mixin gz-make-width ($count, $total: null) {
   $value: gz-get-span-value($count, $total);
   flex: 0 0 $value;

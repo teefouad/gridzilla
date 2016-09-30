@@ -1,9 +1,10 @@
+@import "units-mixins";
+
 @if $gz-equal-width-units-enabled == true {
 
   @include gz-make-responsive($gz-equal-width-units-responsive-enabled) {
     .#{$gz-prefix}unit#{$gz-breakpoint-suffix} {
-      flex: 1 1 0%;
-      width: auto;
+      @include gz-make-equal-width;
     }
   }
 
