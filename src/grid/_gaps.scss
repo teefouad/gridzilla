@@ -12,48 +12,64 @@
 
 @if $gz-smallest-gaps-enabled == true {
   @include gz-make-responsive($gz-smallest-gaps-responsive-enabled) {
-    @include gz-make-gaps-modifier("smallest-gaps#{$gz-breakpoint-suffix}", $gz-smallest-gaps-value);
+    .#{$gz-prefix}smallest-gaps#{$gz-breakpoint-suffix} {
+      @include gz-make-smallest-gaps;
+    }
   }
 }
 
 @if $gz-smaller-gaps-enabled == true {
   @include gz-make-responsive($gz-smaller-gaps-responsive-enabled) {
-    @include gz-make-gaps-modifier("smaller-gaps#{$gz-breakpoint-suffix}", $gz-smaller-gaps-value);
+    .#{$gz-prefix}smaller-gaps#{$gz-breakpoint-suffix} {
+      @include gz-make-smaller-gaps;
+    }
   }
 }
 
 @if $gz-small-gaps-enabled == true {
   @include gz-make-responsive($gz-small-gaps-responsive-enabled) {
-    @include gz-make-gaps-modifier("small-gaps#{$gz-breakpoint-suffix}", $gz-small-gaps-value);
+    .#{$gz-prefix}small-gaps#{$gz-breakpoint-suffix} {
+      @include gz-make-small-gaps;
+    }
   }
 }
 
 @if $gz-medium-gaps-enabled == true {
   @include gz-make-responsive($gz-medium-gaps-responsive-enabled) {
-    @include gz-make-gaps-modifier("medium-gaps#{$gz-breakpoint-suffix}", $gz-medium-gaps-value);
+    .#{$gz-prefix}medium-gaps#{$gz-breakpoint-suffix} {
+      @include gz-make-medium-gaps;
+    }
   }
 }
 
 @if $gz-large-gaps-enabled == true {
   @include gz-make-responsive($gz-large-gaps-responsive-enabled) {
-    @include gz-make-gaps-modifier("large-gaps#{$gz-breakpoint-suffix}", $gz-large-gaps-value);
+    .#{$gz-prefix}large-gaps#{$gz-breakpoint-suffix} {
+      @include gz-make-large-gaps;
+    }
   }
 }
 
 @if $gz-larger-gaps-enabled == true {
   @include gz-make-responsive($gz-larger-gaps-responsive-enabled) {
-    @include gz-make-gaps-modifier("larger-gaps#{$gz-breakpoint-suffix}", $gz-larger-gaps-value);
+    .#{$gz-prefix}larger-gaps#{$gz-breakpoint-suffix} {
+      @include gz-make-larger-gaps;
+    }
   }
 }
 
 @if $gz-largest-gaps-enabled == true {
   @include gz-make-responsive($gz-largest-gaps-responsive-enabled) {
-    @include gz-make-gaps-modifier("largest-gaps#{$gz-breakpoint-suffix}", $gz-largest-gaps-value);
+    .#{$gz-prefix}largest-gaps#{$gz-breakpoint-suffix} {
+      @include gz-make-largest-gaps;
+    }
   }
 }
 
 @if $gz-no-gaps-enabled == true {
   @include gz-make-responsive($gz-no-gaps-responsive-enabled) {
-    @include gz-make-gaps-modifier("no-gaps#{$gz-breakpoint-suffix}", 0);
+    .#{$gz-prefix}no-gaps#{$gz-breakpoint-suffix} {
+      @include gz-make-no-gaps;
+    }
   }
 }

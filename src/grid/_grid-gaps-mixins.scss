@@ -15,8 +15,34 @@
   }
 }
 
-@mixin gz-make-gaps-modifier($modifier-class, $size) {
-  .#{$gz-prefix}#{$modifier-class} {
-    @include gz-make-gaps($size);
-  }
+@mixin gz-make-smallest-gaps {
+  @include gz-make-gaps($gz-smallest-gaps-value);
+}
+
+@mixin gz-make-smaller-gaps {
+  @include gz-make-gaps($gz-smaller-gaps-value);
+}
+
+@mixin gz-make-small-gaps {
+  @include gz-make-gaps($gz-small-gaps-value);
+}
+
+@mixin gz-make-medium-gaps {
+  @include gz-make-gaps($gz-medium-gaps-value);
+}
+
+@mixin gz-make-large-gaps {
+  @include gz-make-gaps($gz-large-gaps-value);
+}
+
+@mixin gz-make-larger-gaps {
+  @include gz-make-gaps($gz-larger-gaps-value);
+}
+
+@mixin gz-make-largest-gaps {
+  @include gz-make-gaps($gz-largest-gaps-value);
+}
+
+@mixin gz-make-no-gaps {
+  @include gz-make-gaps(0);
 }
