@@ -1,27 +1,38 @@
-@function gz-get-span-value($count, $total) {
-  @if $count == 0 { @return 0; }
+@function gz-get-span-value($count, $total: null) {
+  @if $total == null or $total == 0 {
+    @return gz-to-fixed(100% * $count / 100%, 2);
+  }
 
   // Fix value to 2 digits to reduce output file size
   @return gz-to-fixed(100% * $count / $total, 2);
 }
 
-@mixin gz-make-width ($count, $total) {
+@mixin gz-make-width ($count, $total: null) {
   $value: gz-get-span-value($count, $total);
   flex: 0 0 $value;
   width: $value;
 }
 
-@mixin gz-make-push ($count, $total) {
+@mixin gz-make-push ($count, $total: null) {
   $value: gz-get-span-value($count, $total);
   left: $value;
 }
 
-@mixin gz-make-pull ($count, $total) {
+@mixin gz-make-pull ($count, $total: null) {
   $value: gz-get-span-value($count, $total);
   left: -$value;
 }
 
-@mixin gz-make-offset ($count, $total) {
+@mixin gz-make-offset ($count, $total: null) {
   $value: gz-get-span-value($count, $total);
   margin-left: $value;
+}
+
+@mixin gz-make-unit ($width: 100%) {
+  // Required for offset/push/pull
+  position: relative;
+  // By default, all columns should be 100% wide (mobile-first).
+  @include gz-make-width(100%);
+  // border-box forces the browser to include padding and borders when calculating the width.
+  box-sizing: border-box;
 }

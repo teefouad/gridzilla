@@ -1,9 +1,5 @@
+@import "units-mixins";
+
 [class*="#{$gz-prefix}unit-"] {
-  // Required for offset/push/pull
-  position: relative;
-  // By default, all columns should be 100% wide (mobile-first).
-  flex: 0 0 100%;
-  width: 100%;
-  // border-box forces the browser to include padding and borders when calculating the width.
-  box-sizing: border-box;
+  @include gz-make-unit;
 }

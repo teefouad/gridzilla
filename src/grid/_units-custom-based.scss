@@ -35,17 +35,17 @@
 
     // Reset push
     @if $gz-push-units-enabled == true {
-      .#{$gz-prefix}push#{$gz-breakpoint-suffix}-0 { @include gz-make-push(0, 0); }
+      .#{$gz-prefix}push#{$gz-breakpoint-suffix}-0 { @include gz-make-push(0); }
     }
 
     // Reset pull
     @if $gz-pull-units-enabled == true {
-      .#{$gz-prefix}pull#{$gz-breakpoint-suffix}-0 { @include gz-make-pull(0, 0); }
+      .#{$gz-prefix}pull#{$gz-breakpoint-suffix}-0 { @include gz-make-pull(0); }
     }
 
     // Reset offset
     @if $gz-offset-units-enabled == true {
-      .#{$gz-prefix}offset#{$gz-breakpoint-suffix}-0 { @include gz-make-offset(0, 0); }
+      .#{$gz-prefix}offset#{$gz-breakpoint-suffix}-0 { @include gz-make-offset(0); }
     }
   }
 
