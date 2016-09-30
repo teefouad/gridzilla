@@ -1,4 +1,4 @@
-@import "grid-gaps-mixins";
+@import "gaps-mixins";
 
 @if $gz-default-gaps-enabled == true  {
   @include gz-make-responsive($gz-default-gaps-responsive-enabled) {
