@@ -1,0 +1,35 @@
+// Iterates over the breakpoints stack ($gz-breakpoints)
+// and sets 3 global variables which may be used when
+// writing responsive styles.
+@mixin gz-make-responsive($enabled: true) {
+  // $enable is a parameter that could be used to manually
+  // override the global flag.
+  // For each breakpoint, set 3 global variables before
+  // printing the to-be-responsive styles.
+  @if $gz-responsive-features-enabled == true and $enabled == true {
+    @each $breakpoint-name, $breakpoint-value in $gz-breakpoints {
+      $gz-breakpoint: #{$breakpoint-name} !global;
+      $gz-breakpoint-prefix: '#{$breakpoint-name}-' !global;
+      $gz-breakpoint-suffix: '-#{$breakpoint-name}' !global;
+
+      // responsive styles should follow the mobile-first approach
+      @include gz-media-and-larger($breakpoint-name) {
+        @content;
+      }
+    }
+  }
+  // Skip if either the global flag or the manual flag is
+  // set to 'false'.
+  @else {
+    $gz-breakpoint: '' !global;
+    $gz-breakpoint-suffix: '' !global;
+    $gz-breakpoint-prefix: '' !global;
+
+    @content;
+  }
+
+  // Clear global variables.
+  $gz-breakpoint: null !global;
+  $gz-breakpoint-prefix: null !global;
+  $gz-breakpoint-suffix: null !global;
+}

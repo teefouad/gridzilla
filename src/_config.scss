@@ -3,19 +3,19 @@
 // ==========================================================================
 
 // namespacing
-$gz-namespace                                       : "" !default;
-$gz-prefix                                          : if($gz-namespace and $gz-namespace != "", "#{$gz-namespace}-", "") !default;
+$gz-namespace                                       : '' !default;
+$gz-prefix                                          : if($gz-namespace and $gz-namespace != '', '#{$gz-namespace}-', '') !default;
 
 // global responsive features
 $gz-responsive-features-enabled                     : true !default;
 
 // breakpoints
 $gz-breakpoints                                     : (
-                                                      "xs": null, // no lower limit
-                                                      "sm": 544px,
-                                                      "md": 768px,
-                                                      "lg": 992px,
-                                                      "xl": 1200px
+                                                      'xs': null, // no lower limit
+                                                      'sm': 544px,
+                                                      'md': 768px,
+                                                      'lg': 992px,
+                                                      'xl': 1200px
                                                     ) !default;
 
 // container
@@ -23,47 +23,47 @@ $gz-container-enabled                               : true !default;
 $gz-container-responsive-enabled                    : true !default;
 $gz-container-side-padding                          : 20px !default;
 $gz-container-sizes                                 : (
-                                                      "xs": 100%,
-                                                      "sm": 100%,
-                                                      "md": 750px,
-                                                      "lg": 960px,
-                                                      "xl": 1140px
+                                                      'xs': 100%,
+                                                      'sm': 100%,
+                                                      'md': 750px,
+                                                      'lg': 960px,
+                                                      'xl': 1140px
                                                     ) !default;
 
 // tiles
-$gz-tiles-enabled                                 : true !default;
-$gz-tiles-responsive-enabled                      : true !default;
+$gz-tiles-enabled                                   : true !default;
+$gz-tiles-responsive-enabled                        : true !default;
 
 // equal-width units
-$gz-equal-width-units-enabled                     : true !default;
-$gz-equal-width-units-responsive-enabled          : true !default;
+$gz-equal-width-units-enabled                       : true !default;
+$gz-equal-width-units-responsive-enabled            : true !default;
 
 // auto units
-$gz-auto-units-enabled                            : true !default;
-$gz-auto-units-responsive-enabled                 : true !default;
-$gz-auto-units-count                              : 6 !default; // .col.auto-xs-2
+$gz-auto-units-enabled                              : true !default;
+$gz-auto-units-responsive-enabled                   : true !default;
+$gz-auto-units-count                                : 6 !default; // .col.auto-xs-2
 
 // twelve-based units
-$gz-twelve-based-units-enabled                    : true !default;
-$gz-twelve-based-units-responsive-enabled         : true !default;
-$gz-twelve-based-units-count                      : 12 !default;
+$gz-twelve-based-units-enabled                      : true !default;
+$gz-twelve-based-units-responsive-enabled           : true !default;
+$gz-twelve-based-units-count                        : 12 !default;
 
 // custom-based units
-$gz-custom-based-units-enabled                    : true !default;
-$gz-custom-based-units-responsive-enabled         : true !default;
-$gz-custom-based-units-count                      : 6 !default;
+$gz-custom-based-units-enabled                      : true !default;
+$gz-custom-based-units-responsive-enabled           : true !default;
+$gz-custom-based-units-count                        : 6 !default;
 
 // unit push/pull/offset
-$gz-push-units-enabled                            : true !default;
-$gz-pull-units-enabled                            : true !default;
-$gz-offset-units-enabled                          : true !default;
+$gz-push-units-enabled                              : true !default;
+$gz-pull-units-enabled                              : true !default;
+$gz-offset-units-enabled                            : true !default;
 
 // unit order
-$gz-first-unit-enabled                            : true !default;
-$gz-first-unit-responsive-enabled                 : true !default;
+$gz-first-unit-enabled                              : true !default;
+$gz-first-unit-responsive-enabled                   : true !default;
 
-$gz-last-unit-enabled                             : true !default;
-$gz-last-unit-responsive-enabled                  : true !default;
+$gz-last-unit-enabled                               : true !default;
+$gz-last-unit-responsive-enabled                    : true !default;
 
 // direction
 $gz-reverse-enabled                                 : true !default;
@@ -103,14 +103,14 @@ $gz-align-middle-responsive-enabled                 : true !default;
 $gz-align-bottom-enabled                            : true !default;
 $gz-align-bottom-responsive-enabled                 : true !default;
 
-$gz-align-top-unit-enabled                        : true !default;
-$gz-align-top-unit-responsive-enabled             : true !default;
+$gz-align-top-unit-enabled                          : true !default;
+$gz-align-top-unit-responsive-enabled               : true !default;
 
-$gz-align-middle-unit-enabled                     : true !default;
-$gz-align-middle-unit-responsive-enabled          : true !default;
+$gz-align-middle-unit-enabled                       : true !default;
+$gz-align-middle-unit-responsive-enabled            : true !default;
 
-$gz-align-bottom-unit-enabled                     : true !default;
-$gz-align-bottom-unit-responsive-enabled          : true !default;
+$gz-align-bottom-unit-enabled                       : true !default;
+$gz-align-bottom-unit-responsive-enabled            : true !default;
 
 // fit-content
 $gz-fit-content-enabled                             : true !default;
@@ -120,18 +120,18 @@ $gz-fit-content-responsive-enabled                  : true !default;
 $gz-stretch-enabled                                 : true !default;
 $gz-stretch-responsive-enabled                      : true !default;
 
-$gz-stretch-unit-enabled                          : true !default;
-$gz-stretch-unit-responsive-enabled               : true !default;
+$gz-stretch-unit-enabled                            : true !default;
+$gz-stretch-unit-responsive-enabled                 : true !default;
 
 // gaps
 $gz-default-gaps-enabled                            : true !default;
 $gz-default-gaps-responsive-enabled                 : true !default;
 $gz-default-gaps-values                             : (
-                                                      "xs": 4px,
-                                                      "sm": 10px,
-                                                      "md": 20px,
-                                                      "lg": 30px,
-                                                      "xl": 30px
+                                                      'xs': 4px,
+                                                      'sm': 10px,
+                                                      'md': 20px,
+                                                      'lg': 30px,
+                                                      'xl': 30px
                                                     ) !default;
 
 $gz-no-gaps-enabled                                 : true !default;

@@ -1,8 +1,8 @@
 @if $gz-align-top-unit-enabled == true {
   @include gz-make-responsive($gz-align-top-unit-responsive-enabled) {
-    [class*="#{$gz-prefix}unit-"] {
+    [class*='#{$gz-prefix}unit-'] {
       &.#{$gz-prefix}align-top#{$gz-breakpoint-suffix} {
-        @include gz-align-unit(top);
+        @include gz-unit-vertical-align(top);
       }
     }
   }
@@ -10,9 +10,9 @@
 
 @if $gz-align-middle-unit-enabled == true {
   @include gz-make-responsive($gz-align-middle-unit-responsive-enabled) {
-    [class*="#{$gz-prefix}unit-"] {
+    [class*='#{$gz-prefix}unit-'] {
       &.#{$gz-prefix}align-middle#{$gz-breakpoint-suffix} {
-        @include gz-align-unit(middle);
+        @include gz-unit-vertical-align(middle);
       }
     }
   }
@@ -20,9 +20,9 @@
 
 @if $gz-align-bottom-unit-enabled == true {
   @include gz-make-responsive($gz-align-bottom-unit-responsive-enabled) {
-    [class*="#{$gz-prefix}unit-"] {
+    [class*='#{$gz-prefix}unit-'] {
       &.#{$gz-prefix}align-bottom#{$gz-breakpoint-suffix} {
-        @include gz-align-unit(bottom);
+        @include gz-unit-vertical-align(bottom);
       }
     }
   }

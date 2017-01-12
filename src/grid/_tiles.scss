@@ -1,15 +1,7 @@
 @if $gz-tiles-enabled == true {
-
   @include gz-make-responsive($gz-tiles-responsive-enabled) {
     .tiles#{$gz-breakpoint-suffix} {
-      display: flex;
-      height: 100%;
-
-      > .grid {
-        flex: 1 1 0;
-        align-items: stretch;
-      }
+      @include gz-make-tiles;
     }
   }
-
 }

@@ -1,10 +1,8 @@
-@import "units-mixins";
-
 @if $gz-first-unit-enabled == true {
   @include gz-make-responsive($gz-first-unit-responsive-enabled) {
-    [class*="#{$gz-prefix}unit-"] {
+    [class*='#{$gz-prefix}unit-'] {
       &.#{$gz-prefix}first#{$gz-breakpoint-suffix} {
-        @include gz-make-first;
+        @include gz-unit-first;
       }
     }
   }
@@ -12,9 +10,9 @@
 
 @if $gz-last-unit-enabled == true {
   @include gz-make-responsive($gz-last-unit-responsive-enabled) {
-    [class*="#{$gz-prefix}unit-"] {
+    [class*='#{$gz-prefix}unit-'] {
       &.#{$gz-prefix}last#{$gz-breakpoint-suffix} {
-        @include gz-make-last;
+        @include gz-unit-last;
       }
     }
   }

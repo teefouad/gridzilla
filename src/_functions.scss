@@ -2,6 +2,16 @@
 // FUNCTIONS
 // ==========================================================================
 
+// Returns a percentage value based on a fraction value.
+@function gz-percentage($count, $total: null) {
+  @if $total == null or $total == 0 {
+    @return gz-to-fixed(100% * $count / 100%, 2);
+  }
+
+  // Fix value to 2 digits to reduce output file size
+  @return gz-to-fixed(100% * $count / $total, 2);
+}
+
 // Returns power of any number.
 @function gz-pow($number, $exponent) {
   $ret: 1;
@@ -27,8 +37,8 @@
 
 // Splits a string into a list based on a specific delimiter.
 @function gz-explode($string, $delimiter) {
-  @if $string == "" {
-    @return ("");
+  @if $string == '' {
+    @return ('');
   }
 
   $list: ();
@@ -41,7 +51,7 @@
     // No delimiter in the string
     @if str-length($string) >= 1 and $index == null {
       $list: append($list, $string);
-      $string: "";
+      $string: '';
       $should-loop: false;
     }
 

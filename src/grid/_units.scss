@@ -1,5 +1,0 @@
-@import "units-mixins";
-
-[class*="#{$gz-prefix}unit-"] {
-  @include gz-make-unit;
-}

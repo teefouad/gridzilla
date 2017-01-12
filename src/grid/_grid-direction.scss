@@ -2,7 +2,7 @@
   @include gz-make-responsive($gz-reverse-responsive-enabled) {
     .#{$gz-prefix}grid {
       &.#{$gz-prefix}reverse#{$gz-breakpoint-suffix} {
-        flex-direction: row-reverse;
+        @include gz-grid-direction(row, true);
       }
     }
   }
@@ -12,11 +12,11 @@
   @include gz-make-responsive($gz-vertical-responsive-enabled) {
     .#{$gz-prefix}grid {
       &.#{$gz-prefix}vertical#{$gz-breakpoint-suffix} {
-        flex-direction: column;
+        @include gz-grid-direction(column, false);
 
         @if $gz-reverse-enabled == true {
           &.#{$gz-prefix}reverse#{$gz-breakpoint-suffix} {
-            flex-direction: column-reverse;
+            @include gz-grid-direction(column, true);
           }
         }
       }

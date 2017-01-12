@@ -1,0 +1,9 @@
+@if $gz-auto-units-enabled == true {
+  @include gz-make-responsive($gz-auto-units-responsive-enabled) {
+    @for $a from 1 through $gz-auto-units-count {
+      .#{$gz-prefix}grid[class*='#{$gz-prefix}auto#{$gz-breakpoint-suffix}-#{$a}'] > [class*='#{$gz-prefix}unit-'] {
+        @include gz-unit-width(1, $a);
+      }
+    }
+  }
+}

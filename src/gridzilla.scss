@@ -1,27 +1,27 @@
-@import "config";
-@import "functions";
-@import "mixins";
+@import 'config';
+@import 'functions';
+@import 'mixins';
 
-@import "grid/containers";
+@import 'grid/container';
 
-@import "grid/grid";
-@import "grid/grid-nowrap";
-@import "grid/grid-direction";
-@import "grid/grid-distribution";
-@import "grid/grid-horizontal-align";
-@import "grid/grid-vertical-align";
-@import "grid/grid-stretch";
+@import 'grid/grid';
+@import 'grid/grid-nowrap';
+@import 'grid/grid-direction';
+@import 'grid/grid-distribution';
+@import 'grid/grid-horizontal-align';
+@import 'grid/grid-vertical-align';
+@import 'grid/grid-stretch';
 
-@import "grid/units";
-@import "grid/units-auto";
-@import "grid/units-twelve-based";
-@import "grid/units-custom-based";
-@import "grid/units-equal-width";
-@import "grid/units-order";
-@import "grid/units-fit-content";
-@import "grid/units-vertical-align";
-@import "grid/units-stretch";
+@import 'grid/unit';
+@import 'grid/unit-auto';
+@import 'grid/unit-twelve-based';
+@import 'grid/unit-custom-based';
+@import 'grid/unit-equal-width';
+@import 'grid/unit-order';
+@import 'grid/unit-fit-content';
+@import 'grid/unit-vertical-align';
+@import 'grid/unit-stretch';
 
-@import "grid/gaps";
+@import 'grid/gaps';
 
-@import "grid/tiles";
+@import 'grid/tiles';

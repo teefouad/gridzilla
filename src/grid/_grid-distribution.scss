@@ -2,7 +2,7 @@
   @include gz-make-responsive($gz-justify-responsive-enabled) {
     .#{$gz-prefix}grid {
       &.#{$gz-prefix}justify#{$gz-breakpoint-suffix} {
-        justify-content: space-between;
+        @include gz-grid-distribution(justify);
       }
     }
   }
@@ -12,7 +12,7 @@
   @include gz-make-responsive($gz-spread-responsive-enabled) {
     .#{$gz-prefix}grid {
       &.#{$gz-prefix}spread#{$gz-breakpoint-suffix} {
-        justify-content: space-around;
+        @include gz-grid-distribution(spread);
       }
     }
   }

@@ -1,13 +1,9 @@
-@import "units-mixins";
-
 @if $gz-stretch-unit-enabled == true {
-
   @include gz-make-responsive($gz-stretch-unit-responsive-enabled) {
-    [class*="#{$gz-prefix}unit-"] {
+    [class*='#{$gz-prefix}unit-'] {
       &.#{$gz-prefix}stretch#{$gz-breakpoint-suffix} {
-        @include gz-stretch-unit;
+        @include gz-unit-stretch;
       }
     }
   }
-
 }

@@ -1,0 +1,9 @@
+// Clear floated elements.
+@mixin gz-clear-floats {
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}

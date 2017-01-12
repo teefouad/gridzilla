@@ -1,6 +1,4 @@
-@import "container-mixins";
-
-[class*="#{$gz-prefix}container-"] {
+[class*='#{$gz-prefix}container-'] {
   @include gz-make-container;
 }
 
@@ -14,18 +12,20 @@
   $breakpoint-index: gz-key-index($gz-breakpoints, $gz-breakpoint);
 
   @if ($gz-container-responsive-enabled == true) {
-    // Create a placeholder for containers that match the current breakpoint.
+    // Create a placeholder for containers that match the
+    // current breakpoint.
     %containers-#{$gz-breakpoint} {
       width: map-get($gz-container-sizes, $gz-breakpoint);
     }
 
-    // Iterate over all containers and extend the placeholder if the container
-    // matches the current breakpoint.
+    // Iterate over all containers and extend the placeholder
+    // if the container matches the current breakpoint.
     @each $container-name, $container-width in $gz-container-sizes {
       $container-index: gz-key-index($gz-container-sizes, $container-name);
 
-      // The container matches the breakpoint if its index in the stack is equal to
-      // or larger than the index of the breakpoint.
+      // The container matches the breakpoint if its index in
+      // the stack is equal to or larger than the index of the
+      // breakpoint.
       @if $container-index >= $breakpoint-index {
         .#{$gz-prefix}container-#{$container-name} {
           @extend %containers-#{$gz-breakpoint};
@@ -33,8 +33,8 @@
       }
     }
   } @else {
-    // If responsive features are disabled for the containers, simply set
-    // the approperiate width for each container.
+    // If responsive features are disabled for the containers,
+    // simply set the approperiate width for each container.
     @each $container-name, $container-width in $gz-container-sizes {
       .#{$gz-prefix}container-#{$container-name} {
         width: map-get($gz-container-sizes, $container-name);

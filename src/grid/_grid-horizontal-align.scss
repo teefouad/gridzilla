@@ -2,7 +2,7 @@
   @include gz-make-responsive($gz-align-start-responsive-enabled) {
     .#{$gz-prefix}grid {
       &.#{$gz-prefix}align-start#{$gz-breakpoint-suffix} {
-        justify-content: flex-start;
+        @include gz-grid-horizontal-align(start);
       }
     }
   }
@@ -12,7 +12,7 @@
   @include gz-make-responsive($gz-align-center-responsive-enabled) {
     .#{$gz-prefix}grid {
       &.#{$gz-prefix}align-center#{$gz-breakpoint-suffix} {
-        justify-content: center;
+        @include gz-grid-horizontal-align(center);
       }
     }
   }
@@ -22,7 +22,7 @@
   @include gz-make-responsive($gz-align-end-responsive-enabled) {
     .#{$gz-prefix}grid {
       &.#{$gz-prefix}align-end#{$gz-breakpoint-suffix} {
-        justify-content: flex-end;
+        @include gz-grid-horizontal-align(end);
       }
     }
   }

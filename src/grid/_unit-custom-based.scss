@@ -1,7 +1,4 @@
-@import "units-mixins";
-
 @if $gz-custom-based-units-enabled == true {
-
   @include gz-make-responsive($gz-custom-based-units-responsive-enabled) {
     // This list will be used to keep track of calculated columns to avoid redundancy
     // in column class names (col-md-2-4 is the same as col-md-1-2).
@@ -13,21 +10,21 @@
           $calculated-units: append($calculated-units, #{$a / $b});
 
           // Width
-          .#{$gz-prefix}unit#{$gz-breakpoint-suffix}-#{$a}-#{$b} { @include gz-make-width($a, $b); }
+          .#{$gz-prefix}unit#{$gz-breakpoint-suffix}-#{$a}-#{$b} { @include gz-unit-width($a, $b); }
 
           // Push
           @if $gz-push-units-enabled == true {
-            .#{$gz-prefix}push#{$gz-breakpoint-suffix}-#{$a}-#{$b} { @include gz-make-push($a, $b); }
+            .#{$gz-prefix}push#{$gz-breakpoint-suffix}-#{$a}-#{$b} { @include gz-unit-push($a, $b); }
           }
 
           // Pull
           @if $gz-pull-units-enabled == true {
-            .#{$gz-prefix}pull#{$gz-breakpoint-suffix}-#{$a}-#{$b} { @include gz-make-pull($a, $b); }
+            .#{$gz-prefix}pull#{$gz-breakpoint-suffix}-#{$a}-#{$b} { @include gz-unit-pull($a, $b); }
           }
 
           // Offset
           @if $gz-offset-units-enabled == true {
-            .#{$gz-prefix}offset#{$gz-breakpoint-suffix}-#{$a}-#{$b} { @include gz-make-offset($a, $b); }
+            .#{$gz-prefix}offset#{$gz-breakpoint-suffix}-#{$a}-#{$b} { @include gz-unit-offset($a, $b); }
           }
         }
       }
@@ -35,18 +32,17 @@
 
     // Reset push
     @if $gz-push-units-enabled == true {
-      .#{$gz-prefix}push#{$gz-breakpoint-suffix}-0 { @include gz-make-push(0); }
+      .#{$gz-prefix}push#{$gz-breakpoint-suffix}-0 { @include gz-unit-push(0); }
     }
 
     // Reset pull
     @if $gz-pull-units-enabled == true {
-      .#{$gz-prefix}pull#{$gz-breakpoint-suffix}-0 { @include gz-make-pull(0); }
+      .#{$gz-prefix}pull#{$gz-breakpoint-suffix}-0 { @include gz-unit-pull(0); }
     }
 
     // Reset offset
     @if $gz-offset-units-enabled == true {
-      .#{$gz-prefix}offset#{$gz-breakpoint-suffix}-0 { @include gz-make-offset(0); }
+      .#{$gz-prefix}offset#{$gz-breakpoint-suffix}-0 { @include gz-unit-offset(0); }
     }
   }
-
 }

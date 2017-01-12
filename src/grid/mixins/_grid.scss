@@ -1,0 +1,51 @@
+@mixin gz-make-grid {
+  // Enable flex mode.
+  display: flex;
+  // Flex items should wrap by default.
+  flex-wrap: wrap;
+  // Align flex items to the baseline by default.
+  align-items: baseline;
+  // border-box forces the browser to include padding and borders when calculating the width.
+  box-sizing: border-box;
+}
+
+@mixin gz-grid-nowrap {
+  flex-wrap: nowrap;
+}
+
+@mixin gz-grid-direction($direction: 'row', $is-reversed: false) {
+  flex-direction: #{$direction}#{if($is-reversed, '-reverse', '')};
+}
+
+@mixin gz-grid-distribution($distibution: justify) {
+  $map: (
+    justify : space-between,
+    spread  : space-around,
+  );
+
+  justify-content: map-get($map, $distibution);
+}
+
+@mixin gz-grid-horizontal-align($align: center) {
+  $map: (
+    start  : flex-start,
+    center : center,
+    end    : flex-end,
+  );
+
+  justify-content: map-get($map, $align);
+}
+
+@mixin gz-grid-vertical-align($align: center) {
+  $map: (
+    start  : flex-start,
+    center : center,
+    end    : flex-end,
+  );
+
+  align-items: map-get($map, $align);
+}
+
+@mixin gz-grid-stretch {
+  align-items: stretch;
+}
