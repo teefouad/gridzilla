@@ -1,10 +1,10 @@
-@import "//fonts.googleapis.com/css?family=Kaushan+Script|Lato:300,400,700|Inconsolata|Lora:400italic";
+@import '//fonts.googleapis.com/css?family=Kaushan+Script|Lato:300,400,700|Inconsolata|Lora:400italic';
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
  */
-@import url(../css/icons/style.css);
+@import url(icons/style.css);
 html {
   font-family: sans-serif;
   /* 1 */
@@ -590,14 +590,14 @@ pre.line-numbers > code {
   background: rgba(255, 51, 89, 0.8);
 }
 
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+pre[class*='language-']::-moz-selection, pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection, code[class*='language-'] ::-moz-selection {
   color: #fff;
   background: rgba(255, 51, 89, 0.8);
 }
 
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
+pre[class*='language-']::selection, pre[class*='language-'] ::selection,
+code[class*='language-']::selection, code[class*='language-'] ::selection {
   color: #fff;
   background: rgba(255, 51, 89, 0.8);
 }
@@ -616,7 +616,7 @@ body.emotion {
 }
 
 body.emotion:before {
-  content: "";
+  content: '';
   display: block;
   width: 100%;
   height: 100%;
@@ -662,7 +662,7 @@ body.emotion:before {
 .logo {
   margin: 0;
   width: 100%;
-  font: normal normal 70px/30px "Kaushan Script", sans-serif;
+  font: normal normal 70px/30px 'Kaushan Script', sans-serif;
   letter-spacing: -3px;
   text-indent: -20px;
   text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.3);
@@ -711,7 +711,7 @@ body.emotion:before {
 }
 
 .action-links a i:after {
-  content: "";
+  content: '';
   display: block;
   width: 70px;
   height: 70px;
@@ -924,7 +924,7 @@ body.emotion:before {
 
 #header:before,
 #nav:before {
-  content: "";
+  content: '';
   display: block;
   width: 100%;
   height: 100%;
@@ -966,7 +966,7 @@ body.emotion:before {
 }
 
 #smile:before, #smile:after {
-  content: "";
+  content: '';
   display: block;
   width: 40px;
   height: 40px;
@@ -1433,7 +1433,7 @@ body.emotion:before {
   left: 0;
   width: 100%;
   z-index: -1;
-  font: normal normal 36px/1 "Kaushan Script", sans-serif;
+  font: normal normal 36px/1 'Kaushan Script', sans-serif;
   opacity: 0;
 }
 
@@ -1453,7 +1453,7 @@ body.emotion:before {
 #nav .home-link {
   display: block;
   float: left;
-  font: normal normal 24px/60px "Kaushan Script", sans-serif;
+  font: normal normal 24px/60px 'Kaushan Script', sans-serif;
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
   text-decoration: none;
   color: #fff;
@@ -1495,7 +1495,7 @@ body.emotion:before {
 }
 
 #nav .icon-links > li a:after {
-  content: "";
+  content: '';
   display: block;
   width: 36px;
   height: 36px;
@@ -1642,7 +1642,7 @@ body.emotion:before {
 }
 
 #page h1:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 56%;
   left: -30px;
@@ -1692,20 +1692,31 @@ body.emotion:before {
   border-left: 3px solid #ff3359;
 }
 
-#page ul {
-  list-style: none;
-  padding: 0 0 0 10px;
+#page ul, #page ol {
   margin: 30px 0;
+}
+
+#page ul li, #page ol li {
+  padding-left: 10px;
+  line-height: 24px;
+}
+
+#page ul li + li, #page ol li + li {
+  margin-top: 10px;
+}
+
+#page ul {
+  padding: 0 0 0 10px;
+  list-style: none;
 }
 
 #page ul li {
   position: relative;
   padding-left: 20px;
-  line-height: 24px;
 }
 
 #page ul li:before {
-  content: "";
+  content: '';
   display: block;
   width: 6px;
   height: 1px;
@@ -1713,10 +1724,6 @@ body.emotion:before {
   top: 50%;
   left: 0;
   background: #ff3359;
-}
-
-#page ul li + li {
-  margin-top: 3px;
 }
 
 #page .intro {
@@ -1731,11 +1738,11 @@ body.emotion:before {
   font-style: italic;
 }
 
-#page code:not([class*="language-"]) {
+#page code:not([class*='language-']) {
   display: inline-block;
   padding: 0 5px;
   font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.025em;
   text-shadow: none;
   color: #ff3359;
@@ -1950,7 +1957,7 @@ body.emotion:before {
 
 .spanner .span-right:before,
 .spanner .span-left:before {
-  content: "";
+  content: '';
   display: block;
   height: 0;
   position: absolute;
@@ -1962,7 +1969,7 @@ body.emotion:before {
 
 .spanner .span-right:after,
 .spanner .span-left:after {
-  content: "";
+  content: '';
   display: block;
   width: 0;
   height: 0;
@@ -2060,7 +2067,7 @@ article.box p {
 }
 
 #footer p:last-child {
-  font: normal normal 24px/30px "Kaushan Script", serif;
+  font: normal normal 24px/30px 'Kaushan Script', serif;
   letter-spacing: 3px;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
 }
@@ -2092,7 +2099,7 @@ article.box p {
 }
 
 #footer p:nth-child(2):before, #footer p:nth-child(2):after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   top: 50%;

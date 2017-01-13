@@ -6,7 +6,7 @@
 
   margin: -#{$size};
 
-  > * {
+  > [class*='#{$gz-prefix}unit-'] {
     padding: #{$size};
   }
 
