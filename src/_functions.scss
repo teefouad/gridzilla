@@ -68,34 +68,25 @@
 
 // Returns index of a given key in a map.
 @function gz-key-index($map, $element) {
-  $keys-list: map-keys($map);
-  @return index($keys-list, $element);
+  @return wb-key-index($map, $element);
 }
 
 // Returns a key for a given index in a map.
 @function gz-key-at($map, $index) {
-  $keys-list: map-keys($map);
-  @return nth($keys-list, $index);
+  @return wb-key-at($map, $index);
 }
 
 // Checks whether the passed breakpoint is the first breakpoint in the stack ($gz-breakpoints) or not.
 @function gz-is-first-breakpoint($breakpoint) {
-  @return gz-key-at($gz-breakpoints, 1) == $breakpoint;
+  @return wb-is-first-breakpoint($breakpoint);
 }
 
 // Checks whether the passed breakpoint is the last breakpoint in the stack ($gz-breakpoints) or not.
 @function gz-is-last-breakpoint($breakpoint) {
-  @return gz-key-at($gz-breakpoints, length($gz-breakpoints)) == $breakpoint;
+  @return wb-is-last-breakpoint($breakpoint);
 }
 
 // Returns the upper-limit for a given breakpoint.
 @function gz-breakpoint-upper-limit($breakpoint) {
-  @if (gz-is-last-breakpoint($breakpoint) == true) {
-    @return null;
-  }
-
-  $breakpoint-index: gz-key-index($gz-breakpoints, $breakpoint);
-  $next-breakpoint: gz-key-at($gz-breakpoints, $breakpoint-index + 1);
-
-  @return map-get($gz-breakpoints, $next-breakpoint);
+  @return wb-breakpoint-upper-limit($breakpoint);
 }

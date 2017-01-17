@@ -25,16 +25,16 @@
     "url": "https://github.com/teefouad/gridzilla/issues"
   },
   "homepage": "https://github.com/teefouad/gridzilla#readme",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
     "grunt": "^1.0.1",
-    "grunt-sass": "^1.2.1",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-cssmin": "^1.0.2",
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-notify": "^0.4.5",
-    "load-grunt-tasks": "^3.5.2"
+    "grunt-sass": "^1.2.1",
+    "load-grunt-tasks": "^3.5.2",
+    "whiteboard-media": "^0.1.4"
   }
 }

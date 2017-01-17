@@ -7,15 +7,12 @@
   // For each breakpoint, set 3 global variables before
   // printing the to-be-responsive styles.
   @if $gz-responsive-features-enabled == true and $enabled == true {
-    @each $breakpoint-name, $breakpoint-value in $gz-breakpoints {
-      $gz-breakpoint: #{$breakpoint-name} !global;
-      $gz-breakpoint-prefix: '#{$breakpoint-name}-' !global;
-      $gz-breakpoint-suffix: '-#{$breakpoint-name}' !global;
+    @include wb-make-responsive {
+      $gz-breakpoint: $wb-breakpoint !global;
+      $gz-breakpoint-prefix: $wb-breakpoint-prefix !global;
+      $gz-breakpoint-suffix: $wb-breakpoint-suffix !global;
 
-      // responsive styles should follow the mobile-first approach
-      @include gz-media-and-larger($breakpoint-name) {
-        @content;
-      }
+      @content;
     }
   }
   // Skip if either the global flag or the manual flag is

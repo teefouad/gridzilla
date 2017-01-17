@@ -1,4 +1,6 @@
 module.exports = function(grunt) {
+  var wbMedia = require('whiteboard-media');
+
   require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
@@ -11,7 +13,8 @@ module.exports = function(grunt) {
     sass: {
       options: {
         sourceMap: true,
-        outputStyle: 'expanded'
+        outputStyle: 'expanded',
+        importer: wbMedia
       },
 
       styles: {
