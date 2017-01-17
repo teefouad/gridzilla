@@ -1617,6 +1617,15 @@ body.emotion:before {
   background: #fff;
 }
 
+#page a {
+  color: #ff3359;
+  text-decoration: none;
+}
+
+#page a:hover {
+  color: #ff9933;
+}
+
 #page section {
   padding: 100px 0;
 }
@@ -1796,6 +1805,23 @@ body.emotion:before {
 
 #page .codeblock .line-numbers-rows > span:before {
   color: #ccc;
+}
+
+#page .codeblock--term > pre {
+  background: #222;
+}
+
+#page .codeblock--term > pre code {
+  color: #fff;
+}
+
+#page .codeblock--term > button.copy {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+#page .codeblock--term > button.copy:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 #page .table-responsive {

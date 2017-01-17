@@ -20,7 +20,7 @@ module.exports = function(grunt) {
       styles: {
         files: [{
           expand: true,
-          cwd: 'src',
+          cwd: 'src/sass',
           src: ['*.scss', '**/*.scss'],
           dest: 'dist',
           ext: '.css',
@@ -79,7 +79,7 @@ module.exports = function(grunt) {
 
     watch: {
       styles: {
-        files: ['src/*.scss', 'src/**/*.scss'],
+        files: ['src/sass/*.scss', 'src/sass/**/*.scss'],
         tasks: ['build'],
         options: {
           spawn: false

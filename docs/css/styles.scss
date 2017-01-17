@@ -968,6 +968,15 @@ body {
   z-index: 1;
   background: #fff;
 
+  a {
+    color: $color-c;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-a;
+    }
+  }
+
   section {
     padding: 100px 0;
 
@@ -1153,6 +1162,25 @@ body {
         color: #ccc;
       }
       border-right: 1px dashed #d0d0d0;
+    }
+  }
+
+  .codeblock--term {
+    > pre {
+      background: #222;
+
+      code {
+        color: #fff;
+      }
+    }
+
+    > button.copy {
+      background: rgba(#fff, 0.05);
+
+      &:hover {
+        color: #fff;
+        background: rgba(#fff, 0.1);
+      }
     }
   }
 
