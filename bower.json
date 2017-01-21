@@ -1,0 +1,30 @@
+{
+  "name": "gridzilla",
+  "description": "Gridzilla is a responsive, mobile-first flexbox grid system.",
+  "main": "src/sass/gridzilla.scss",
+  "authors": [
+    "Mostafa Fouad"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "html",
+    "css",
+    "sass",
+    "framework",
+    "grid",
+    "flexbox",
+    "fluid",
+    "responsive",
+    "mobile",
+    "columns",
+    "layout"
+  ],
+  "homepage": "https://github.com/teefouad/gridzilla",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
