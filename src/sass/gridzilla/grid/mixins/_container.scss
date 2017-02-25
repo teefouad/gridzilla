@@ -18,3 +18,23 @@
   // Clear floating elements.
   @include gz-clear-floats;
 }
+
+@mixin gz-make-container-size($container-name, $is-responsive: true) {
+  @include gz-make-responsive($is-responsive) {
+    $breakpoint-index: gz-key-index($gz-breakpoints, $gz-breakpoint);
+    $container-index: gz-key-index($gz-container-sizes, $container-name);
+
+    @if ($is-responsive == true) {
+      // The container matches the breakpoint if its index in
+      // the stack is equal to or larger than the index of the
+      // breakpoint.
+      @if $container-index >= $breakpoint-index {
+        width: map-get($gz-container-sizes, $gz-breakpoint);
+      }
+    } @else {
+      // If responsive features are disabled for the containers,
+      // simply set the approperiate width.
+      width: map-get($gz-container-sizes, $container-name);
+    }
+  }
+}
