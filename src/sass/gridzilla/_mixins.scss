@@ -7,11 +7,11 @@
 @import 'config';
 @import 'functions';
 
-@import 'grid/mixins/media';
-@import 'grid/mixins/responsive';
-@import 'grid/mixins/container';
-@import 'grid/mixins/grid';
-@import 'grid/mixins/unit';
-@import 'grid/mixins/gaps';
-@import 'grid/mixins/tiles';
-@import 'grid/mixins/other';
+@import 'mixins/media';
+@import 'mixins/responsive';
+@import 'mixins/container';
+@import 'mixins/grid';
+@import 'mixins/unit';
+@import 'mixins/gaps';
+@import 'mixins/tiles';
+@import 'mixins/other';

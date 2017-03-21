@@ -1,25 +1,25 @@
 @import 'gridzilla/mixins';
 
-@import 'gridzilla/grid/container';
+@import 'gridzilla/container';
 
-@import 'gridzilla/grid/grid';
-@import 'gridzilla/grid/grid-nowrap';
-@import 'gridzilla/grid/grid-direction';
-@import 'gridzilla/grid/grid-distribution';
-@import 'gridzilla/grid/grid-horizontal-align';
-@import 'gridzilla/grid/grid-vertical-align';
-@import 'gridzilla/grid/grid-stretch';
+@import 'gridzilla/grid';
+@import 'gridzilla/grid-nowrap';
+@import 'gridzilla/grid-direction';
+@import 'gridzilla/grid-distribution';
+@import 'gridzilla/grid-horizontal-align';
+@import 'gridzilla/grid-vertical-align';
+@import 'gridzilla/grid-stretch';
 
-@import 'gridzilla/grid/unit';
-@import 'gridzilla/grid/unit-auto';
-@import 'gridzilla/grid/unit-twelve-based';
-@import 'gridzilla/grid/unit-custom-based';
-@import 'gridzilla/grid/unit-equal-width';
-@import 'gridzilla/grid/unit-order';
-@import 'gridzilla/grid/unit-fit-content';
-@import 'gridzilla/grid/unit-vertical-align';
-@import 'gridzilla/grid/unit-stretch';
+@import 'gridzilla/unit';
+@import 'gridzilla/unit-auto';
+@import 'gridzilla/unit-twelve-based';
+@import 'gridzilla/unit-custom-based';
+@import 'gridzilla/unit-equal-width';
+@import 'gridzilla/unit-order';
+@import 'gridzilla/unit-fit-content';
+@import 'gridzilla/unit-vertical-align';
+@import 'gridzilla/unit-stretch';
 
-@import 'gridzilla/grid/gaps';
+@import 'gridzilla/gaps';
 
-@import 'gridzilla/grid/tiles';
+@import 'gridzilla/tiles';
