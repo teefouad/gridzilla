@@ -1,6 +1,4 @@
 @mixin gz-make-container ($width: null) {
-  // Create a new positioning context for child elements.
-  position: relative;
   // Center the container.
   margin-right: auto;
   margin-left: auto;
