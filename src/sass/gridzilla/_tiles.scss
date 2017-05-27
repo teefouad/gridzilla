@@ -1,6 +1,6 @@
 @if $gz-tiles-enabled == true {
   @include gz-make-responsive($gz-tiles-responsive-enabled) {
-    .tiles#{$gz-breakpoint-suffix} {
+    .#{$gz-prefix}tiles#{$gz-breakpoint-suffix} {
       @include gz-make-tiles;
     }
   }
