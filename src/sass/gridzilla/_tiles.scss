@@ -1,3 +1,5 @@
+@import 'mixins';
+
 @if $gz-tiles-enabled == true {
   @include gz-make-responsive($gz-tiles-responsive-enabled) {
     .#{$gz-prefix}tiles#{$gz-breakpoint-suffix} {

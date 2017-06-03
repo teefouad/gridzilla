@@ -1,3 +1,5 @@
+@import 'mixins';
+
 @if $gz-twelve-based-units-enabled == true {
   @include gz-make-responsive($gz-twelve-based-units-responsive-enabled) {
     @for $a from 1 through $gz-twelve-based-units-count {

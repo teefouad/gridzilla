@@ -1,3 +1,5 @@
+@import 'mixins';
+
 @if $gz-custom-based-units-enabled == true {
   @include gz-make-responsive($gz-custom-based-units-responsive-enabled) {
     // This list will be used to keep track of calculated columns to avoid redundancy

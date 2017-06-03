@@ -1,3 +1,5 @@
+@import 'mixins';
+
 @if $gz-default-gaps-enabled == true  {
   @include gz-make-responsive($gz-default-gaps-responsive-enabled) {
     $gz-default-gaps-value: map-get($gz-default-gaps-values, $gz-breakpoint);

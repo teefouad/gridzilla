@@ -1,3 +1,5 @@
+@import 'mixins';
+
 @if $gz-stretch-enabled == true {
   @include gz-make-responsive($gz-stretch-responsive-enabled) {
     .#{$gz-prefix}grid {

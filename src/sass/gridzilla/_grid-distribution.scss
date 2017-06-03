@@ -1,3 +1,5 @@
+@import 'mixins';
+
 @if $gz-justify-enabled == true {
   @include gz-make-responsive($gz-justify-responsive-enabled) {
     .#{$gz-prefix}grid {

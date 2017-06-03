@@ -1,3 +1,5 @@
+@import 'mixins';
+
 @if $gz-equal-width-units-enabled == true {
   @include gz-make-responsive($gz-equal-width-units-responsive-enabled) {
     .#{$gz-prefix}unit#{$gz-breakpoint-suffix} {
